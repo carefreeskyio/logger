@@ -1,4 +1,4 @@
-module logger
+module github.com/carefreeio/logger
 
 go 1.16
 
