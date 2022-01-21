@@ -9,7 +9,7 @@ import (
 
 type Option struct {
 	Path         string
-	RotationTime int
+	RotationTime time.Duration
 	Level        string
 	WithMaxAge   int
 }
@@ -18,7 +18,7 @@ func InitLogger(o *Option) {
 	writer, err := rotatelogs.New(
 		o.Path+".%Y%m%d%H%M%S",
 		rotatelogs.WithLinkName(o.Path),
-		rotatelogs.WithRotationTime(time.Duration(o.RotationTime)*time.Hour),
+		rotatelogs.WithRotationTime(o.RotationTime*time.Hour),
 		rotatelogs.WithMaxAge(time.Duration(o.WithMaxAge*24)*time.Hour),
 	)
 	if err != nil {
