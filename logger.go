@@ -22,7 +22,9 @@ func InitLogger(o *Option) {
 		rotatelogs.WithRotationTime(time.Duration(o.RotationTime)*time.Hour),
 		rotatelogs.WithMaxAge(time.Duration(o.WithMaxAge*24)*time.Hour),
 	)
-	fmt.Println(err)
+	if err != nil {
+		log.Fatalf("init logger failed: err=%v", err)
+	}
 	log.SetOutput(writer)
 	log.SetFormatter(&log.JSONFormatter{
 		TimestampFormat: "2006-01-02 15:04:05",
