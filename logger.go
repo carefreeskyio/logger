@@ -2,7 +2,6 @@ package logger
 
 import (
 	"context"
-	"fmt"
 	rotatelogs "github.com/lestrrat-go/file-rotatelogs"
 	log "github.com/sirupsen/logrus"
 	"time"
