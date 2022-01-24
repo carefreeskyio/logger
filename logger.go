@@ -61,6 +61,7 @@ func InitLogger() {
 	log.SetReportCaller(true)
 
 	log.AddHook(hook.CtxHook{
+		Prefix: DefaultCustomOptions.FieldPrefix,
 		Fields: DefaultCustomOptions.CtxFiles,
 	})
 }

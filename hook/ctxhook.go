@@ -1,11 +1,11 @@
 package hook
 
 import (
-	"github.com/carefreex-io/logger"
 	log "github.com/sirupsen/logrus"
 )
 
 type CtxHook struct {
+	Prefix string
 	Fields []string
 }
 
@@ -26,7 +26,7 @@ func (hook CtxHook) Fire(entry *log.Entry) error {
 		return nil
 	}
 	for _, field := range hook.Fields {
-		entry.Data[logger.DefaultCustomOptions.FieldPrefix+field] = entry.Context.Value(field)
+		entry.Data[hook.Prefix+field] = entry.Context.Value(field)
 	}
 	return nil
 }
