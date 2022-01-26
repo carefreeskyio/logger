@@ -5,92 +5,92 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
-// TraceLn logs a message at level Trace on the standard logger.
-func TraceLn(args ...interface{}) {
+// Traceln logs a message at level Trace on the standard logger.
+func Traceln(args ...interface{}) {
 	log.NewEntry(log.StandardLogger()).Traceln(args...)
 }
 
-// DebugLn logs a message at level Debug on the standard logger.
-func DebugLn(args ...interface{}) {
+// Debugln logs a message at level Debug on the standard logger.
+func Debugln(args ...interface{}) {
 	log.NewEntry(log.StandardLogger()).Debugln(args...)
 }
 
-// PrintLn logs a message at level Info on the standard logger.
-func PrintLn(args ...interface{}) {
+// Println logs a message at level Info on the standard logger.
+func Println(args ...interface{}) {
 	log.NewEntry(log.StandardLogger()).Infoln(args...)
 }
 
-// InfoLn logs a message at level Info on the standard logger.
-func InfoLn(args ...interface{}) {
+// Infoln logs a message at level Info on the standard logger.
+func Infoln(args ...interface{}) {
 	log.NewEntry(log.StandardLogger()).Infoln(args...)
 }
 
-// WarnLn logs a message at level Warn on the standard logger.
-func WarnLn(args ...interface{}) {
+// Warnln logs a message at level Warn on the standard logger.
+func Warnln(args ...interface{}) {
 	log.NewEntry(log.StandardLogger()).Warnln(args...)
 }
 
-// WarningLn logs a message at level Warn on the standard logger.
-func WarningLn(args ...interface{}) {
+// Warningln logs a message at level Warn on the standard logger.
+func Warningln(args ...interface{}) {
 	log.NewEntry(log.StandardLogger()).Warnln(args...)
 }
 
-// ErrorLn logs a message at level Error on the standard logger.
-func ErrorLn(args ...interface{}) {
+// Errorln logs a message at level Error on the standard logger.
+func Errorln(args ...interface{}) {
 	log.NewEntry(log.StandardLogger()).Errorln(args...)
 }
 
-// PanicLn logs a message at level Panic on the standard logger.
-func PanicLn(args ...interface{}) {
+// Panicln logs a message at level Panic on the standard logger.
+func Panicln(args ...interface{}) {
 	log.NewEntry(log.StandardLogger()).Panicln(args...)
 }
 
-// FatalLn logs a message at level Fatal on the standard logger then the process will exit with status set to 1.
-func FatalLn(args ...interface{}) {
+// Fatalln logs a message at level Fatal on the standard logger then the process will exit with status set to 1.
+func Fatalln(args ...interface{}) {
 	log.NewEntry(log.StandardLogger()).Fatalln(args...)
 }
 
-// TraceLnX logs a message at level Trace on the standard logger.
-func TraceLnX(ctx context.Context, args ...interface{}) {
+// TracelnX logs a message at level Trace on the standard logger.
+func TracelnX(ctx context.Context, args ...interface{}) {
 	log.WithContext(ctx).Traceln(args...)
 }
 
-// DebugLnX logs a message at level Debug on the standard logger.
-func DebugLnX(ctx context.Context, args ...interface{}) {
+// DebuglnX logs a message at level Debug on the standard logger.
+func DebuglnX(ctx context.Context, args ...interface{}) {
 	log.WithContext(ctx).Debugln(args...)
 }
 
-// PrintLnX logs a message at level Info on the standard logger.
-func PrintLnX(ctx context.Context, args ...interface{}) {
+// PrintlnX logs a message at level Info on the standard logger.
+func PrintlnX(ctx context.Context, args ...interface{}) {
 	log.WithContext(ctx).Infoln(args...)
 }
 
-// InfoLnX logs a message at level Info on the standard logger.
-func InfoLnX(ctx context.Context, args ...interface{}) {
+// InfolnX logs a message at level Info on the standard logger.
+func InfolnX(ctx context.Context, args ...interface{}) {
 	log.WithContext(ctx).Infoln(args...)
 }
 
-// WarnLnX logs a message at level Warn on the standard logger.
-func WarnLnX(ctx context.Context, args ...interface{}) {
+// WarnlnX logs a message at level Warn on the standard logger.
+func WarnlnX(ctx context.Context, args ...interface{}) {
 	log.WithContext(ctx).Warnln(args...)
 }
 
-// WarningLnX logs a message at level Warn on the standard logger.
-func WarningLnX(ctx context.Context, args ...interface{}) {
+// WarninglnX logs a message at level Warn on the standard logger.
+func WarninglnX(ctx context.Context, args ...interface{}) {
 	log.WithContext(ctx).Warnln(args...)
 }
 
-// ErrorLnX logs a message at level Error on the standard logger.
-func ErrorLnX(ctx context.Context, args ...interface{}) {
+// ErrorlnX logs a message at level Error on the standard logger.
+func ErrorlnX(ctx context.Context, args ...interface{}) {
 	log.WithContext(ctx).Errorln(args...)
 }
 
-// PanicLnX logs a message at level Panic on the standard logger.
-func PanicLnX(ctx context.Context, args ...interface{}) {
+// PaniclnX logs a message at level Panic on the standard logger.
+func PaniclnX(ctx context.Context, args ...interface{}) {
 	log.WithContext(ctx).Panicln(args...)
 }
 
-// FatalLnX logs a message at level Fatal on the standard logger then the process will exit with status set to 1.
-func FatalLnX(ctx context.Context, args ...interface{}) {
+// FatallnX logs a message at level Fatal on the standard logger then the process will exit with status set to 1.
+func FatallnX(ctx context.Context, args ...interface{}) {
 	log.WithContext(ctx).Fatalln(args...)
 }
