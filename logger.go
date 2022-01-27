@@ -6,6 +6,8 @@ import (
 	"github.com/carefreex-io/logger/hook"
 	rotatelogs "github.com/lestrrat-go/file-rotatelogs"
 	log "github.com/sirupsen/logrus"
+	"io"
+	"os"
 	"time"
 )
 
@@ -41,7 +43,7 @@ func initBaseOptions() {
 func InitLogger() {
 	initBaseOptions()
 
-	writer, err := rotatelogs.New(
+	logFile, err := rotatelogs.New(
 		baseOptions.Path+".%Y%m%d_%H",
 		rotatelogs.WithLinkName(baseOptions.Path),
 		rotatelogs.WithRotationTime(baseOptions.RotationTime),
@@ -50,7 +52,8 @@ func InitLogger() {
 	if err != nil {
 		log.Fatalf("init logger failed: err=%v", err)
 	}
-	log.SetOutput(writer)
+	stdout := os.Stdout
+	log.SetOutput(io.MultiWriter(logFile, stdout))
 	log.SetFormatter(&log.JSONFormatter{
 		TimestampFormat: "2006-01-02 15:04:05",
 	})
